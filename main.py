@@ -25,7 +25,7 @@ async def hola(variables:str):
             new_variables.append(variables[idx])
         variables=new_variables
         pd.set_option('display.max_columns',None)
-        df = pd.read_csv('C:/Users/Damian Wayne/Desktop/pm/data.csv')
+        df = pd.read_csv('data.csv')
 
         #eliminacion de columnas que no necesitaremos
         df=df.drop(['id' , 'Unnamed: 32'] , axis=1)
