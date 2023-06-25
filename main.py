@@ -84,8 +84,7 @@ async def hola(variables:str):
         response = jsonable_encoder(data)
         return response
     except Exception as e:
-        print(e)
-        data = {'exeption': e, 'variables':catched}
+        data = {'exeption': str(e), 'variables':catched}
         response = jsonable_encoder(data)
         return response
  
