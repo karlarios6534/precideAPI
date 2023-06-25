@@ -15,6 +15,7 @@ app = FastAPI()
 @app.get("/{variables}")
 async def hola(variables:str):
     try:
+        catched = variables
         variables=variables.replace('{','').replace('}','')
         variables = list(map(float, variables.split("%")))
         new_variables = []
@@ -84,7 +85,7 @@ async def hola(variables:str):
         return response
     except Exception as e:
         print(e)
-        data = {'exeption': e, 'variables':variables}
+        data = {'exeption': e, 'variables':catched}
         response = jsonable_encoder(data)
         return response
  
